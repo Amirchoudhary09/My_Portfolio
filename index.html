@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Choudhary | SDE @ Wasp3D | Full Stack & Graphics Developer</title>
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Portfolio of Amir Choudhary, Software Development Engineer at Wasp3D. Specializing in C++, DirectX 12 graphics rendering, MERN stack, and Gemini/OpenAI integrations.">
+    
+    <!-- Google Fonts: Outfit (modern body/headings) and Fira Code (tech monospace) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for clean vector icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="dark-theme">
+    <!-- Dynamic Constellation Particle Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Background Canvas for Interactive Matrix/Glow Elements -->
+    <div class="glow-bg-grid"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container container">
+            <a href="#home" class="logo" id="nav-logo">
+                <span class="logo-bracket">&lt;</span>Amir<span class="logo-dot">.</span>Choudhary<span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+                    <li><a href="#achievements" class="nav-link"><i class="fa-solid fa-trophy"></i> Wins</a></li>
+                    <li><a href="#terminal-section" class="nav-link"><i class="fa-solid fa-terminal"></i> Amir.AI</a></li>
+                    <li><a href="https://drive.google.com/file/d/1yEY2LOqebwGFgvju3TJzW5G9DKERdWBX/view?usp=drive_link" target="_blank" class="nav-link"><i class="fa-solid fa-file-pdf"></i> Resume</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+                    <li class="nav-hire-btn-mobile"><a href="mailto:amirchoudharyb03@gmail.com?subject=SDE%20Opportunity%20-%20Amir%20Choudhary&amp;body=Hi%20Amir,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20was%20impressed%20by%20your%20graphics%20and%20full-stack%20engineering%20work.%20I%20would%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20with%20you.%0D%0A%0D%0ABest%20regards," class="nav-link btn btn-nav-mobile"><i class="fa-solid fa-envelope"></i> Hire Me</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="mailto:amirchoudharyb03@gmail.com?subject=SDE%20Opportunity%20-%20Amir%20Choudhary&amp;body=Hi%20Amir,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20was%20impressed%20by%20your%20graphics%20and%20full-stack%20engineering%20work.%20I%20would%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20with%20you.%0D%0A%0D%0ABest%20regards," class="btn btn-nav"><i class="fa-solid fa-envelope"></i> Hire Me</a>
+                <button class="nav-toggle-btn" id="nav-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero-container container grid">
+                <div class="hero-content">
+                    <div class="hero-tagline">
+                        <span class="tagline-badge">Hello, World!</span>
+                    </div>
+                    <h1 class="hero-title">
+                        I'm <span class="highlight-text">Amir Choudhary</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text" id="typing-element"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        Software Development Engineer at <strong>Wasp3D</strong>. Specializing in low-level graphics rendering with C++ and DirectX 12, MERN full-stack architectures, and AI-driven generative software solutions (Gemini & OpenAI API, LangChain).
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Explore Projects</a>
+                        <a href="https://drive.google.com/file/d/1yEY2LOqebwGFgvju3TJzW5G9DKERdWBX/view?usp=drive_link" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> View Resume</a>
+                        <a href="#terminal-section" class="btn btn-secondary"><i class="fa-solid fa-terminal"></i> Try Amir.AI</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Amirchoudhary09" target="_blank" aria-label="GitHub" class="social-icon-wrapper"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/amirchoudhary09/" target="_blank" aria-label="LinkedIn" class="social-icon-wrapper"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://leetcode.com/u/AMIR09/" target="_blank" aria-label="LeetCode" class="social-icon-wrapper"><i class="fa-solid fa-code" title="LeetCode"></i></a>
+                        <a href="https://www.geeksforgeeks.org/profile/amirchoudharyb09" target="_blank" aria-label="GeeksforGeeks" class="social-icon-wrapper"><i class="fa-solid fa-terminal" title="GeeksforGeeks"></i></a>
+                        <a href="https://codolio.com/profile/amirchoudharyb09" target="_blank" aria-label="Codolio Portfolio" class="social-icon-wrapper"><i class="fa-solid fa-briefcase" title="Codolio Portfolio"></i></a>
+                        <a href="mailto:amirchoudharyb03@gmail.com" aria-label="Email" class="social-icon-wrapper"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="hero-img-wrapper">
+                    <div class="hero-blob">
+                        <img src="assets/developer_avatar.png" alt="Amir's Developer Workspace" class="hero-img">
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="hero-code-badge badge-left">
+                        <i class="fa-solid fa-dice-d20 text-cyan react-spin"></i>
+                        <div>
+                            <span>DirectX 12</span>
+                            <small>C++ Graphics Dev</small>
+                        </div>
+                    </div>
+                    <div class="hero-code-badge badge-right">
+                        <i class="fa-solid fa-brain brain-pulse"></i>
+                        <div>
+                            <span>AI & Full Stack</span>
+                            <small>MERN & LangChain</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <h2 class="section-title text-center" id="about-heading">About Me</h2>
+                <span class="section-subtitle text-center">My Background & Core Accomplishments</span>
+                
+                <div class="about-grid grid">
+                    <div class="about-details">
+                        <h3 class="about-subtitle">Education & Aspirations</h3>
+                        <p class="about-text">
+                            I am a final-year B.Tech student in Computer Science engineering with an AIML specialization at 
+                            <strong>G.L. Bajaj Institute of Technology and Management</strong>. Carrying an academic record of 
+                            <strong class="highlight-text">8.01/10 CGPA</strong>, I bridge the gap between academic theory 
+                            and real-world software engineering.
+                        </p>
+                        <p class="about-text">
+                            With over <strong>900+ Data Structures & Algorithms</strong> solved across platforms like LeetCode 
+                            and GeeksforGeeks, I have built a robust analytical foundation. I thrive on creating clean, 
+                            efficient, and scalable backend services, coupled with responsive and visually compelling user interfaces.
+                        </p>
+                        
+                        <div class="education-card">
+                            <div class="education-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="education-info">
+                                <span class="education-badge">Education</span>
+                                <h4>Bachelor of Technology (B.Tech)</h4>
+                                <p class="education-spec">Computer Science (Artificial Intelligence & Machine Learning)</p>
+                                <span class="education-inst">G.L. Bajaj Institute of Technology and Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats grid">
+                        <!-- Stat Box 1 -->
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-code-compare"></i></div>
+                            <span class="stat-number">900+</span>
+                            <span class="stat-label">DSA Problems Solved</span>
+                            <span class="stat-meta">Peak LeetCode Rating: 1600</span>
+                        </div>
+                        <!-- Stat Box 2 -->
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                            <span class="stat-number">Top 3</span>
+                            <span class="stat-label">Adobe Emerge Hackathon</span>
+                            <span class="stat-meta">IIT Delhi Finalist '25</span>
+                        </div>
+
+                        <!-- Stat Box 3 -->
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-building-user"></i></div>
+                            <span class="stat-number">SDE</span>
+                            <span class="stat-label">Full-time Engineer</span>
+                            <span class="stat-meta">Wasp3D (Onsite, Noida)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <h2 class="section-title text-center" id="skills-heading">Tech Stack</h2>
+                <span class="section-subtitle text-center">Tools, languages, and technologies I specialize in</span>
+                
+                <!-- Skill Categories -->
+                <div class="skills-categories-grid grid">
+                    
+                    <!-- Languages & Graphics -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-language header-icon"></i>
+                            <h3>Languages & Graphics</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-terminal text-blue"></i> C++ & C</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-dice-d20 text-cyan"></i> DirectX 12 & HLSL Shaders</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-python text-yellow"></i> Python</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-js text-gold"></i> JavaScript & TypeScript</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-database text-cyan"></i> SQL</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Frameworks -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-cubes header-icon"></i>
+                            <h3>Web Frameworks</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-react text-react"></i> React.js</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-node-js text-green"></i> Node.js & Express.js</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-atom text-violet"></i> Redux Toolkit & React Query</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-css3-alt text-cyan"></i> Tailwind CSS</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 95%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-bolt text-yellow"></i> WebSockets & Zod</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Genetic AI -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-brain header-icon"></i>
+                            <h3>Genetic AI</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-wand-magic-sparkles text-pink"></i> Gemini & OpenAI APIs</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-link text-green"></i> LangChain (Agentic RAG)</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-keyboard text-cyan"></i> Prompt Engineering</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-network-wired text-violet"></i> RAG Systems</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-chart-line text-yellow"></i> K-Means & Machine Learning</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases, Tools & Concepts -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-screwdriver-wrench header-icon"></i>
+                            <h3>Databases & Tools</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-leaf text-green"></i> MongoDB (NoSQL) & Mongoose</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-database text-cyan"></i> MySQL (SQL)</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 80%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-box text-red"></i> Redis Caching</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 75%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-brands fa-github text-white"></i> Git & GitHub</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-paper-plane text-orange"></i> Postman API Testing</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 90%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name"><i class="fa-solid fa-gears text-blue"></i> OOP, System Design & DBMS</span>
+                                <div class="skill-bar"><span class="skill-progress" style="width: 85%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <h2 class="section-title text-center" id="experience-heading">Experience</h2>
+                <span class="section-subtitle text-center">My journey in the professional software industry</span>
+                
+                <div class="timeline-container">
+                    <!-- Timeline Card 1: Wasp3D -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">April 2026 - Present</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <i class="fa-solid fa-briefcase timeline-card-icon"></i>
+                                <div>
+                                    <h3 class="timeline-title">Software Development Engineer (SDE)</h3>
+                                    <h4 class="timeline-company">Wasp3D — Noida, India (Onsite)</h4>
+                                </div>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Engineered a low-level graphics rendering system using <strong>C++ and DirectX 12</strong>, implementing the complete rendering pipeline with GPU resource management (Vertex/Index Buffers, Descriptor Heaps, RTV).</li>
+                                <li>Designed and optimized <strong>Root Signature and Pipeline State Objects (PSO)</strong> to reduce runtime overhead and improve pipeline efficiency.</li>
+                                <li>Implemented modular architecture using <strong>OOP principles</strong> for device initialization, command queue, and resource handling, reducing code coupling across rendering modules.</li>
+                                <li>Managed <strong>Resource Barriers, GPU synchronization</strong>, and integrated <strong>HLSL shaders (Vertex & Pixel)</strong> ensuring correct state transitions, smooth frame execution, and efficient CPU-GPU data flow.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Card 2: Bluestocks -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">March 2025 - May 2025</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <i class="fa-solid fa-building-user timeline-card-icon"></i>
+                                <div>
+                                    <h3 class="timeline-title">Software Development Engineer Intern (SDE Intern)</h3>
+                                    <h4 class="timeline-company">Bluestocks Fintech — Remote</h4>
+                                </div>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Developed a responsive Services page using <strong>React.js and Tailwind CSS</strong> with modular component architecture, improving page load performance by <strong>20%</strong>.</li>
+                                <li>Built and integrated **full CRUD REST APIs** using **Express.js and MongoDB** for service management.</li>
+                                <li>Tested APIs using **Postman** with proper error handling, status codes, and edge case validation, ensuring smooth frontend-backend data flow.</li>
+                                <li>Enhanced UI consistency across modules and collaborated in **Agile sprints**, presenting features to stakeholders in bi-weekly demos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <h2 class="section-title text-center" id="projects-heading">My Projects</h2>
+                <span class="section-subtitle text-center">Innovative software solutions I have engineered</span>
+                
+                <!-- Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ai">AI / Gemini</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid grid">
+                    
+                    <!-- AshGuard -->
+                    <div class="project-card" data-category="ai fullstack">
+                        <div class="project-img-container">
+                            <div class="project-img-overlay"></div>
+                            <i class="fa-solid fa-shield-halved project-card-logo"></i>
+
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AshGuard</h3>
+                            <p class="project-description">
+                                An AI-powered women safety and travel assistant web app with real-time SOS alerts, live location tracking, emergency response, and a 1-Tap SOS system (fake call, live recording, guardian alert, police dial, siren). Sugggests secure paths with Google Maps API and K-Means clustering.
+                            </p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Python</span>
+                                <span>Express.js</span>
+                                <span>Gemini AI</span>
+                                <span>K-Means</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Amirchoudhary09/ASHGUARD" target="_blank" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i> Source</a>
+                                <a href="https://enchantress-ashguard.vercel.app/" target="_blank" class="project-link demo-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Trip Planner -->
+                    <div class="project-card" data-category="ai fullstack">
+                        <div class="project-img-container">
+                            <div class="project-img-overlay"></div>
+                            <i class="fa-solid fa-map-location-dot project-card-logo"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Trip Planner</h3>
+                            <p class="project-description">
+                                An intelligent travel itinerary generator that crafts customized schedules including lodging, meals, and safety integration. Uses Gemini AI to build personalized travel plans based on user preferences and constraints.
+                            </p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Python</span>
+                                <span>Express.js</span>
+                                <span>Gemini AI</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Amirchoudhary09/Travel-Itinerary-Planner-" target="_blank" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i> Source</a>
+                                <a href="https://enchantress-trips-planner.vercel.app/" target="_blank" class="project-link demo-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lost and Found -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-img-container">
+                            <div class="project-img-overlay"></div>
+                            <i class="fa-solid fa-magnifying-glass-location project-card-logo"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Lost and Found</h3>
+                            <p class="project-description">
+                                A community reporting hub that streamlines lost-and-found matching. Implements seamless image uploads, geographical location tagging, and an AI-powered matching algorithm that alerts relevant users based on spatial proximity. Optimized DB queries for 40% faster search response.
+                            </p>
+                            <div class="project-tags">
+                                <span>MongoDB</span>
+                                <span>Express.js</span>
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>JWT / OAuth</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Amirchoudhary09/lost-and-find" target="_blank" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i> Source</a>
+                                <a href="https://lost-and-find.vercel.app/" target="_blank" class="project-link demo-link" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="achievements section" id="achievements">
+            <div class="container">
+                <h2 class="section-title text-center" id="achievements-heading">Achievements & Certs</h2>
+                <span class="section-subtitle text-center">Honors and validations of my technical expertise</span>
+                
+                <div class="achievements-grid grid">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge"><i class="fa-solid fa-trophy"></i> Top 3</div>
+                        <div class="achievement-body">
+                            <h3>Adobe Emerge Hackathon 2025</h3>
+                            <p class="achievement-org">IIT Delhi (National-level Competition)</p>
+                            <p class="achievement-desc">Presented AshGuard at a national stage, securing a podium finish (Top 3) among thousands of applicants.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge"><i class="fa-solid fa-award"></i> Top 6</div>
+                        <div class="achievement-body">
+                            <h3>Hack For Impact 2025</h3>
+                            <p class="achievement-org">IIIT Delhi <a href="https://drive.google.com/file/d/1238LO_BlTbMrj93TUSxXvAQRLmwCDaaE/view?usp=drivesdk" target="_blank" class="highlight-text">(Certificate)</a></p>
+                            <p class="achievement-desc">Engineered assistive technology models under tight sprint conditions for social impact, winning Top 6.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card">
+                        <div class="achievement-badge"><i class="fa-solid fa-star"></i> Top 10</div>
+                        <div class="achievement-body">
+                            <h3>HackSprint Hackathon 2024</h3>
+                            <p class="achievement-org">GDG GL Bajaj <a href="https://drive.google.com/file/d/122bhjR_y1Xx8tllvPd7Rm457Bw8lD9z-/view" target="_blank" class="highlight-text">(Certificate)</a></p>
+                            <p class="achievement-desc">Secured Top 10 ranking for API architecture design and responsive application prototypes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certification 1 -->
+                    <div class="achievement-card certification">
+                        <div class="achievement-badge cert-badge"><i class="fa-solid fa-certificate"></i> Virtual Internship</div>
+                        <div class="achievement-body">
+                            <h3>Google for Developers</h3>
+                            <p class="achievement-org">Google <a href="https://drive.google.com/file/d/11qD4lFmx5ene2OOl3Qewo5CIj8wLhSnx/view?usp=drivesdk" target="_blank" class="highlight-text">(View Certificate)</a></p>
+                            <p class="achievement-desc">Completed developer program covering cloud systems, developer endpoints, and virtual architectures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certification 2 -->
+                    <div class="achievement-card certification">
+                        <div class="achievement-badge cert-badge"><i class="fa-solid fa-shield"></i> Cisco Certified</div>
+                        <div class="achievement-body">
+                            <h3>CCNA & Python Certification</h3>
+                            <p class="achievement-org">Cisco Academy <a href="https://drive.google.com/file/d/1kfajoUAN52OaLUho9O7idFqfGcsFpfsi/view?usp=drivesdk" target="_blank" class="highlight-text">(View Certificate)</a></p>
+                            <p class="achievement-desc">Certified training in routing principles, networking layers, protocols, and Python development scripting.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certification 3 -->
+                    <div class="achievement-card certification">
+                        <div class="achievement-badge cert-badge"><i class="fa-solid fa-graduation-cap"></i> Internship</div>
+                        <div class="achievement-body">
+                            <h3>Web Development Intern</h3>
+                            <p class="achievement-org">See Caller <a href="https://drive.google.com/file/d/12Dv3mIIqi3RQFFh2FEq3JgQHNQ-UHbrZ/view?usp=drivesdk" target="_blank" class="highlight-text">(View Certificate)</a></p>
+                            <p class="achievement-desc">Completed standard web development internship building robust modules and responsive web interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Section -->
+        <section class="github section" id="github">
+            <div class="container">
+                <h2 class="section-title text-center" id="github-heading">GitHub Activity</h2>
+                <span class="section-subtitle text-center">My code statistics and contribution visualizer</span>
+
+                <div class="github-stats-container grid">
+                    <div class="github-stat-img-card">
+                        <h3>General Stats</h3>
+                        <img src="https://github-readme-stats.vercel.app/api?username=Amirchoudhary09&theme=tokyonight&show_icons=true" alt="Amir's GitHub Stats" class="github-img">
+                    </div>
+                    <div class="github-stat-img-card">
+                        <h3>Streak Count</h3>
+                        <img src="https://streak-stats.demolab.com/?user=Amirchoudhary09&theme=tokyonight" alt="Amir's GitHub Streak" class="github-img">
+                    </div>
+                </div>
+                
+                <div class="github-chart-card">
+                    <h3>Contributions Calendar</h3>
+                    <div class="github-scroll-wrapper">
+                        <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amirchoudhary09&theme=react-dark" alt="Amir's Activity Graph" class="github-chart-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive "Amir AI" Terminal Widget Section -->
+        <section class="terminal-section section" id="terminal-section">
+            <div class="container">
+                <h2 class="section-title text-center" id="terminal-heading">Try Amir.AI</h2>
+                <span class="section-subtitle text-center">Query the AI assistant to explore my portfolio interactively</span>
+                
+                <div class="terminal-container-box">
+                    <div class="terminal-header-bar">
+                        <div class="terminal-dots">
+                            <span class="terminal-dot-btn red-dot"></span>
+                            <span class="terminal-dot-btn yellow-dot"></span>
+                            <span class="terminal-dot-btn green-dot"></span>
+                        </div>
+                        <div class="terminal-title-text"><i class="fa-solid fa-terminal"></i> amir-ai-shell v1.0.0 (bash)</div>
+                        <div class="terminal-status-light">ONLINE</div>
+                    </div>
+                    
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-system-text">[SYSTEM] Initialize Amir AI Engine... SUCCESS</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-system-text">[SYSTEM] Load user profiles: 'Amir Choudhary'... SUCCESS</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-text">Welcome to the interactive portfolio helper!</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-text">Type <span class="code-highlight">help</span> to list commands or use the quick buttons below.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick action buttons -->
+                    <div class="terminal-quick-buttons">
+                        <button class="terminal-btn-cmd" data-cmd="about">About Me</button>
+                        <button class="terminal-btn-cmd" data-cmd="skills">Tech Stack</button>
+                        <button class="terminal-btn-cmd" data-cmd="projects">Projects</button>
+                        <button class="terminal-btn-cmd" data-cmd="achievements">Hackathons</button>
+                        <button class="terminal-btn-cmd" data-cmd="resume">Resume</button>
+                        <button class="terminal-btn-cmd" data-cmd="secret">Secret Matrix Rain</button>
+                        <button class="terminal-btn-cmd" data-cmd="clear">Clear Terminal</button>
+                    </div>
+
+                    <!-- Input Bar -->
+                    <div class="terminal-input-bar">
+                        <span class="terminal-prompt">visitor@amir-ai:~$</span>
+                        <input type="text" id="terminal-input" placeholder="Type a command (e.g., help, contact, experience)..." autocomplete="off">
+                        <button class="terminal-send-btn" id="terminal-send" aria-label="Send Command"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2 class="section-title text-center" id="contact-heading">Get in Touch</h2>
+                <span class="section-subtitle text-center">Let's build something extraordinary together</span>
+                
+                <div class="contact-grid grid">
+                    <div class="contact-info">
+                        <h3>Connect with Me</h3>
+                        <p class="contact-desc">
+                            Have an exciting project idea, SDE opportunity, or want to discuss low-level graphics and WebGL/DirectX pipelines? My inbox is always open. Drop a message!
+                        </p>
+                        
+                        <div class="contact-details">
+                            <!-- Email Me -->
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <h4>Email Me</h4>
+                                    <a href="mailto:amirchoudharyb03@gmail.com?subject=SDE%20Opportunity%20-%20Amir%20Choudhary&amp;body=Hi%20Amir,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20was%20impressed%20by%20your%20graphics%20and%20full-stack%20engineering%20work.%20I%20would%20love%20to%20connect%20and%20discuss%20potential%20opportunities%20with%20you.%0D%0A%0D%0ABest%20regards," class="contact-link-text">amirchoudharyb03@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Call Me -->
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h4>Call Me</h4>
+                                    <a href="tel:+919457114241" class="contact-link-text">+91 9457114241</a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <span class="contact-link-text">Greater Noida, India</span>
+                                </div>
+                            </div>
+
+                            <!-- Resume -->
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                <div>
+                                    <h4>Amir's Resume</h4>
+                                    <a href="https://drive.google.com/file/d/1yEY2LOqebwGFgvju3TJzW5G9DKERdWBX/view?usp=drive_link" target="_blank" class="contact-link-text">View / Download CV</a>
+                                </div>
+                            </div>
+
+                            <!-- Social / Coding Profile Icons Row -->
+                            <div class="contact-social-icons">
+                                <a href="https://www.linkedin.com/in/amirchoudhary09/" target="_blank" aria-label="LinkedIn" class="contact-social-badge"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://github.com/Amirchoudhary09" target="_blank" aria-label="GitHub" class="contact-social-badge"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://leetcode.com/u/AMIR09/" target="_blank" aria-label="LeetCode" class="contact-social-badge"><i class="fa-solid fa-code"></i></a>
+                                <a href="https://codolio.com/profile/amirchoudharyb09" target="_blank" aria-label="Codolio Portfolio" class="contact-social-badge"><i class="fa-solid fa-briefcase"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/amirchoudharyb03@gmail.com" method="POST">
+                            <!-- FormSubmit Configurations -->
+                            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission!">
+                            <input type="hidden" name="_template" value="box">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="_honey" style="display:none">
+                            
+                            <div class="form-group grid">
+                                <div class="input-wrapper">
+                                    <label for="form-name">Your Name</label>
+                                    <input type="text" id="form-name" name="name" required placeholder="Enter name">
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="form-email">Your Email</label>
+                                    <input type="email" id="form-email" name="email" required placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" name="subject" required placeholder="Collaboration proposal">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="form-message">Your Message</label>
+                                <textarea id="form-message" name="message" rows="5" required placeholder="Let's build something..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit" id="form-submit">
+                                <span id="btn-submit-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane" id="btn-submit-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">&lt;Amir.Choudhary/&gt;</span>
+                <p>SDE @ Wasp3D | Building high-quality native & full-stack architectures.</p>
+            </div>
+            
+            <div class="footer-right">
+                <p class="copyright">&copy; 2026 Amir Choudhary. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/Amirchoudhary09" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/amirchoudhary09/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://leetcode.com/u/AMIR09/" target="_blank" aria-label="LeetCode"><i class="fa-solid fa-code" title="LeetCode"></i></a>
+                    <a href="https://www.geeksforgeeks.org/profile/amirchoudharyb09" target="_blank" aria-label="GeeksforGeeks"><i class="fa-solid fa-terminal" title="GeeksforGeeks"></i></a>
+                    <a href="https://codolio.com/profile/amirchoudharyb09" target="_blank" aria-label="Codolio Portfolio"><i class="fa-solid fa-briefcase" title="Codolio Portfolio"></i></a>
+                    <a href="mailto:amirchoudharyb03@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Matrix Rain Canvas overlay (hidden by default) -->
+    <canvas id="matrix-canvas" style="display: none; position: fixed; top:0; left:0; width:100vw; height:100vh; z-index:9999; pointer-events:none;"></canvas>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
