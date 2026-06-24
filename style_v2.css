@@ -172,47 +172,62 @@ button {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(0, 242, 254, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 242, 254, 0.02) 1px, transparent 1px);
+        linear-gradient(rgba(0, 242, 254, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.035) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
     z-index: -2;
+    animation: grid-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes grid-pulse {
+    0% { opacity: 0.65; }
+    100% { opacity: 1.15; }
 }
 
 .glow-orb {
     position: fixed;
     border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.15;
+    filter: blur(150px);
+    opacity: 0.23;
     pointer-events: none;
     z-index: -1;
-    animation: float-orbs 25s infinite alternate;
+    animation: float-orbs 20s infinite alternate;
 }
 
 .orb-1 {
-    top: 15%;
-    left: 10%;
-    width: 350px;
-    height: 350px;
+    top: 10%;
+    left: 5%;
+    width: 450px;
+    height: 450px;
     background: var(--accent-cyan);
 }
 
 .orb-2 {
-    bottom: 20%;
-    right: 10%;
-    width: 400px;
-    height: 400px;
+    bottom: 10%;
+    right: 5%;
+    width: 500px;
+    height: 500px;
     background: var(--accent-purple);
     animation-delay: -5s;
 }
 
 .orb-3 {
-    top: 50%;
-    left: 45%;
-    width: 300px;
-    height: 300px;
+    top: 40%;
+    left: 35%;
+    width: 350px;
+    height: 350px;
     background: var(--accent-pink);
     animation-delay: -10s;
+}
+
+.orb-4 {
+    bottom: 45%;
+    right: 45%;
+    width: 250px;
+    height: 250px;
+    background: var(--accent-cyan);
+    animation-delay: -15s;
 }
 
 @keyframes float-orbs {

@@ -454,8 +454,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bgCanvas) {
         const bgCtx = bgCanvas.getContext('2d');
         let particles = [];
-        const particleCount = 80;
-        let mouse = { x: null, y: null, radius: 160 };
+        const particleCount = 110; // Heavier particle density
+        let mouse = { x: null, y: null, radius: 180 };
 
         const resizeBgCanvas = () => {
             bgCanvas.width = window.innerWidth;
@@ -479,13 +479,20 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * bgCanvas.width;
                 this.y = Math.random() * bgCanvas.height;
-                this.vx = (Math.random() - 0.5) * 0.7; // Faster motion
-                this.vy = (Math.random() - 0.5) * 0.7;
-                this.radius = Math.random() * 2.5 + 1.5; // Slightly larger particles
-                this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, 0.65)' : 'rgba(138, 35, 135, 0.5)'; // Brighter colors
+                this.vx = (Math.random() - 0.5) * 0.6; // Soft, smooth drifting speed
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 2 + 1; // Elegant node sizes
+                this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, 0.7)' : 'rgba(233, 64, 87, 0.55)'; // Neon Cyan & Pink
             }
 
             draw() {
+                // Soft neon outer glow aura
+                bgCtx.beginPath();
+                bgCtx.arc(this.x, this.y, this.radius + 4, 0, Math.PI * 2);
+                bgCtx.fillStyle = this.color.replace('0.7', '0.08').replace('0.55', '0.06');
+                bgCtx.fill();
+
+                // Core node
                 bgCtx.beginPath();
                 bgCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 bgCtx.fillStyle = this.color;
@@ -500,15 +507,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Mouse interaction push/pull
+                // Mouse interaction - pull nodes gently in
                 if (mouse.x !== null && mouse.y !== null) {
                     const dx = mouse.x - this.x;
                     const dy = mouse.y - this.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < mouse.radius) {
                         const force = (mouse.radius - dist) / mouse.radius;
-                        this.x -= (dx / dist) * force * 0.5;
-                        this.y -= (dy / dist) * force * 0.5;
+                        this.x += (dx / dist) * force * 0.3; // Gentle gravity pull
+                        this.y += (dy / dist) * force * 0.3;
                     }
                 }
             }
@@ -523,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         initParticles();
 
-        // Connect particles with lines
+        // Connect particles with dual-colored gradients
         const connectParticles = () => {
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
@@ -531,29 +538,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 120) { // Longer connection distance
-                        const alpha = ((120 - dist) / 120) * 0.28; // Brighter lines
+                    if (dist < 125) {
+                        const alpha = ((125 - dist) / 125) * 0.28;
+                        
                         bgCtx.beginPath();
                         bgCtx.moveTo(particles[i].x, particles[i].y);
                         bgCtx.lineTo(particles[j].x, particles[j].y);
-                        bgCtx.strokeStyle = `rgba(0, 242, 254, ${alpha})`;
-                        bgCtx.lineWidth = 0.9;
+                        
+                        // Dual color connection gradients
+                        let grad = bgCtx.createLinearGradient(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
+                        grad.addColorStop(0, particles[i].color.replace('0.7', alpha.toString()).replace('0.55', alpha.toString()));
+                        grad.addColorStop(1, particles[j].color.replace('0.7', alpha.toString()).replace('0.55', alpha.toString()));
+                        
+                        bgCtx.strokeStyle = grad;
+                        bgCtx.lineWidth = 0.8;
                         bgCtx.stroke();
                     }
                 }
 
-                // Connect to mouse
+                // Connect nodes to mouse flashlight glow
                 if (mouse.x !== null && mouse.y !== null) {
                     const dx = particles[i].x - mouse.x;
                     const dy = particles[i].y - mouse.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < mouse.radius) {
-                        const alpha = ((mouse.radius - dist) / mouse.radius) * 0.38; // Brighter cursor attraction
+                        const alpha = ((mouse.radius - dist) / mouse.radius) * 0.32;
                         bgCtx.beginPath();
                         bgCtx.moveTo(particles[i].x, particles[i].y);
                         bgCtx.lineTo(mouse.x, mouse.y);
                         bgCtx.strokeStyle = `rgba(0, 242, 254, ${alpha})`;
-                        bgCtx.lineWidth = 0.9;
+                        bgCtx.lineWidth = 0.8;
                         bgCtx.stroke();
                     }
                 }
@@ -562,6 +576,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const animateBg = () => {
             bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            
+            // Draw interactive mouse gradient flashlight
+            if (mouse.x !== null && mouse.y !== null) {
+                let radialGrad = bgCtx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius);
+                radialGrad.addColorStop(0, 'rgba(0, 242, 254, 0.07)');
+                radialGrad.addColorStop(0.5, 'rgba(138, 35, 135, 0.03)');
+                radialGrad.addColorStop(1, 'rgba(0,0,0,0)');
+                
+                bgCtx.fillStyle = radialGrad;
+                bgCtx.beginPath();
+                bgCtx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
+                bgCtx.fill();
+            }
+
             particles.forEach(p => {
                 p.update();
                 p.draw();
