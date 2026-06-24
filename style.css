@@ -521,19 +521,41 @@ button {
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     z-index: 10;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.badge-left {
-    bottom: 25px;
-    left: -30px;
+.hero-code-badge:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: var(--shadow-neon);
+    background: var(--bg-card-hover);
+    cursor: pointer;
+}
+
+.badge-top-left {
+    top: 10%;
+    left: -45px;
     animation: float-y 4s ease-in-out infinite alternate;
 }
 
-.badge-right {
-    top: 40px;
-    right: -20px;
+.badge-bottom-left {
+    bottom: 12%;
+    left: -35px;
     animation: float-y 4s ease-in-out infinite alternate;
     animation-delay: -2s;
+}
+
+.badge-top-right {
+    top: 18%;
+    right: -35px;
+    animation: float-y 4s ease-in-out infinite alternate;
+    animation-delay: -1s;
+}
+
+.badge-bottom-right {
+    bottom: 8%;
+    right: -25px;
+    animation: float-y 4s ease-in-out infinite alternate;
+    animation-delay: -3s;
 }
 
 @keyframes float-y {
@@ -550,6 +572,11 @@ button {
     animation: spin 10s linear infinite;
 }
 
+.dx12-spin {
+    color: var(--accent-cyan);
+    animation: spin 8s linear infinite;
+}
+
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
@@ -557,6 +584,11 @@ button {
 .brain-pulse {
     color: var(--accent-pink);
     animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.code-pulse {
+    color: #FFD43B;
+    animation: pulse 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
@@ -1884,5 +1916,37 @@ button {
     
     .contact-form-container {
         padding: 24px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-code-badge {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    .hero-code-badge span {
+        font-size: 0.75rem;
+    }
+    .hero-code-badge small {
+        font-size: 0.6rem;
+    }
+    .hero-code-badge i {
+        font-size: 1.2rem;
+    }
+    .badge-top-left {
+        left: -15px;
+        top: 5%;
+    }
+    .badge-bottom-left {
+        left: -10px;
+        bottom: 5%;
+    }
+    .badge-top-right {
+        right: -15px;
+        top: 10%;
+    }
+    .badge-bottom-right {
+        right: -10px;
+        bottom: 10%;
     }
 }
